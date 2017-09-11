@@ -1,8 +1,81 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Nosubhunt Stylesheet */
+/* --------------------------------------- */
+
+/* General
+--------------------*/
+html {
+  height: 100%;
 }
 
-a {
-  color: #00B7FF;
+body {
+  height: 100%;
+  background: #fafafa;
+  color: #333333;
+  line-height: 1.45;
+}
+
+
+/* Layout
+--------------------*/
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Product Card
+--------------------*/
+.product-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: transparent;
+  transition: all 0.5s ease;
+}
+
+.product-card:hover {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.product-image-container {
+  margin-right: 2rem;
+}
+
+.product-image {
+  max-width: 100px;
+  height: auto;
+}
+
+.product-infos {
+  flex: 2;
+}
+
+.product-title {
+  margin-top: 0;
+}
+
+.product-link-container {
+  flex: 1;
+  text-align: center;
+}
+
+.product-link {
+  padding: 1rem 3rem;
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  color: #999;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 400ms cubic-bezier(0.390, 0.500, 0.150, 1.360)
+}
+
+.product-link:hover,
+.product-link:focus {
+  background: linear-gradient(to right, rgb(236, 0, 140), rgb(252, 103, 103));
+  border-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
 }
