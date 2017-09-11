@@ -11,7 +11,7 @@ var index = require('./routes/index');
 var app = express();
 
 // view engine setup
-app.engine('hbs',{extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/'});
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -24,7 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
