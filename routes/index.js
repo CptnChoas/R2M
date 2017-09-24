@@ -12,13 +12,13 @@ router.get('/posts', function(req, res, next) {
   var options = {
       host: 'api.producthunt.com',
       port: 443,
-      path: '/v1/categories/topic-4/posts',
+      path: '/v1/posts',
       method: 'GET',
       headers: {
-          Accept: 'application/json',
+          'Accept': 'application/json',
           'Content-Type': 'application/json',
-          Authorization: 'Bearer cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
-          Host: 'api.producthunt.com'
+          'Authorization': 'Bearer cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
+          'Host': 'api.producthunt.com'
       }
   };
 
