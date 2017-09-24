@@ -1,0 +1,30 @@
+<header>
+  <img class="logo" src="/public/images/logo.png" />
+  <nav>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts">Posts</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="page-head">
+    <h1>Todays posts</h1>
+  </div>
+
+  {{#each posts}}
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="{{ this.thumbnail.image_url }}" class="product-image" />
+        </div>
+        <div class="product-infos">
+          <h2 class="product-title">{{ this.name }}</h2>
+          <span class="product-description">{{ this.tagline }}</span>
+        </div>
+        <div class="product-link-container">
+          <a href="{{ this.redirect_url }}" class="product-link">Get product</a>
+        </div>
+      </div>
+  {{/each}}
+</div>

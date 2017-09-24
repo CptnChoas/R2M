@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET home page. */
-router.get('/asd', function(req, res, next) {
+router.get('/posts', function(req, res, next) {
   var options = {
       host: 'api.producthunt.com',
       port: 443,
@@ -37,7 +37,7 @@ router.get('/asd', function(req, res, next) {
               res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}})
           }
           else{
-              res.render('index', {title:'asd', tests:['a','b','c'], posts:obj.posts});
+              res.render('index', {posts:obj.posts});
           }
       });
   });

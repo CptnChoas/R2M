@@ -1,9 +1,9 @@
 <header>
-  <img class="logo" src="/images/logo.png" />
+  <img class="logo" src="/public/images/logo.png" />
   <nav>
     <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Categories</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts">Posts</a></li>
     </ul>
   </nav>
 </header>
@@ -12,13 +12,6 @@
 
       <div class="page-head">
         <h1>Popular</h1>
-          <p>{{title}}</p>
-          {{#each tests}}
-              <p>{{this}}</p>
-          {{/each}}
-          {{#each posts}}
-              <p>{{this.name}}</p>
-          {{/each}}
       </div>
 
       <div class="product-card">
