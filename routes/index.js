@@ -50,8 +50,8 @@ router.get('/posts', function(req, res, next) {
                 res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}});
             }
             else{
-                res.render('error', {message:'OAuth Info', error:{status:'response', stack:output}});
-                /*var accessToken = data['access_token'];
+                //res.render('error', {message:'OAuth Info', error:{status:'response', stack:output}});
+                var accessToken = obj['access_token'];
                 options = {
                     hostname: 'api.producthunt.com',
                     port: 443,
@@ -89,7 +89,7 @@ router.get('/posts', function(req, res, next) {
                     res.render('error');
                 });
 
-                get.end();*/
+                get.end();
             }
         });
     });
