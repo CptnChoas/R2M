@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     options = {
         hostname: 'api.producthunt.com',
         port: 443,
-        path: '/v1/posts',
+        path: '/v1/posts/all?sort_by=votes_count&order=desc',
         method: 'GET',
         headers: {
             'Accept': 'application/json',
