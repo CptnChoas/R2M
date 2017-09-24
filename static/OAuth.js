@@ -13,11 +13,6 @@ var authorize = function () {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Host': 'api.producthunt.com'
-        },
-        body: {
-            "client_id": myKey,
-            "client_secret": mySecret,
-            "grant_type": "client_credentials"
         }
     };
 
@@ -38,6 +33,11 @@ var authorize = function () {
                 return obj;
             }
         });
+    });
+    auth.write({
+        "client_id": myKey,
+        "client_secret": mySecret,
+        "grant_type": "client_credentials"
     });
 
     auth.on('error', function (err) {

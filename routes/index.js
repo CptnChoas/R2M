@@ -23,12 +23,13 @@ router.get('/posts', function(req, res, next) {
             //'Authorization': 'Bearer ' + accessToken,
             //'Authorization': 'Bearer' + new Buffer(key + ":" + secret, "utf8").toString("base64"),
             'Host': 'api.producthunt.com'
-        },
-        body: {
-            "client_id" : myKey,
-            "client_secret" : mySecret,
-            "grant_type" : "client_credentials"
         }
+    };
+
+    var body = {
+        "client_id" : myKey,
+        "client_secret" : mySecret,
+        "grant_type" : "client_credentials"
     };
 
     var auth = https.request(options, function (data) {
@@ -87,6 +88,8 @@ router.get('/posts', function(req, res, next) {
             }
         });
     });
+
+    auth.write(body);
 
     auth.on('error', function (err) {
         res.render('error');
