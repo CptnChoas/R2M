@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
+
 var https = require('https');
+//var querystring = require('querystring');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,6 +14,13 @@ router.get('/posts', function(req, res, next) {
     var myKey = 'cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
         mySecret = 'abccc689df41ea2f525fcbd974d90c704fc4e5379447ef34005cd08db6f3d9d6';
 
+    var body = {
+        "client_id" : myKey,
+        "client_secret" : mySecret,
+        "grant_type" : "client_credentials"
+    };
+    body = JSON.stringify(body);
+
     var options = {
         hostname: 'api.producthunt.com',
         port: 443,
@@ -20,16 +29,11 @@ router.get('/posts', function(req, res, next) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'Content-Length': body.length,
             //'Authorization': 'Bearer ' + accessToken,
             //'Authorization': 'Bearer' + new Buffer(key + ":" + secret, "utf8").toString("base64"),
             'Host': 'api.producthunt.com'
         }
-    };
-
-    var body = {
-        "client_id" : myKey,
-        "client_secret" : mySecret,
-        "grant_type" : "client_credentials"
     };
 
     var auth = https.request(options, function (data) {
