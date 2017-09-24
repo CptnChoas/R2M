@@ -9,15 +9,19 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/posts', function(req, res, next) {
+    var key = 'cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
+        secret = 'abccc689df41ea2f525fcbd974d90c704fc4e5379447ef34005cd08db6f3d9d6';
+
   var options = {
-      host: 'api.producthunt.com',
+      hostname: 'api.producthunt.com',
       port: 443,
       path: '/v1/posts',
       method: 'GET',
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
+          //'Authorization': 'Bearer cbacb8d45d73b5ca9f8c7c4399f03e480c7a3794188cdbf016ec00df3c38721a',
+          'Authorization': 'Bearer' + new Buffer(key + ":" + secret, "utf8").toString("base64"),
           'Host': 'api.producthunt.com'
       }
   };
@@ -37,7 +41,7 @@ router.get('/posts', function(req, res, next) {
               res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}})
           }
           else{
-              res.render('index', {posts:obj.posts});
+              res.render('posts', {posts:obj.posts});
           }
       });
   });
