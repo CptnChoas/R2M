@@ -28,8 +28,12 @@ router.get('/', function(req, res, next) {
 
       data.on('end', function() {
           var obj = JSON.parse(output);
-          console.log(JSON.stringify(obj));
-          res.render('index', {tests:[1,2,3], posts:obj.map(function (t) { return t.name; })});
+          if(obj.hasOwnProperty('error')){
+              res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}})
+          }
+          else{
+              res.render('index', {tests:[1,2,3]});//, posts:obj.map(function (t) { return t.name; })});
+          }
       });
   });
 
