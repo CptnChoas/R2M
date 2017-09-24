@@ -12,6 +12,9 @@
 
       <div class="page-head">
         <h1>Popular</h1>
+          {{#each tests}}
+              <p>{{this}}</p>
+          {{/each}}
           {{#each posts}}
               <p>{{@index}}. {{this}}</p>
           {{/each}}
