@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
               res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}})
           }
           else{
-              res.render('index', {tests:[1,2,3]});//, posts:obj.map(function (t) { return t.name; })});
+              res.render('index', {tests:['a','b','c'], posts:obj.posts});
           }
       });
   });
