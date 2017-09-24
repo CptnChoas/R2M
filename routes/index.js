@@ -4,6 +4,11 @@ var https = require('https');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    res.render('index', {title:'asd', tests:['a','b','c']});
+});
+
+/* GET home page. */
+router.get('/asd', function(req, res, next) {
   var options = {
       host: 'api.producthunt.com',
       port: 443,
@@ -32,7 +37,7 @@ router.get('/', function(req, res, next) {
               res.render('error', {message:'Error', error:{status:obj.error, stack:obj.error_description}})
           }
           else{
-              res.render('index', {tests:['a','b','c'], posts:obj.posts});
+              res.render('index', {title:'asd', tests:['a','b','c'], posts:obj.posts});
           }
       });
   });
