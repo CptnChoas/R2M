@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
       data.on('end', function() {
           var obj = JSON.parse(output);
           console.log(JSON.stringify(obj));
-          res.render('index', {title:obj.posts[0].name});
+          res.render('index', {posts:obj.posts.map(function (t) { return t.name; })});
       });
   });
 
