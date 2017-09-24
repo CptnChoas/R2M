@@ -10,73 +10,23 @@
 
 <div class="container">
 
-      <div class="page-head">
-        <h1>Popular</h1>
-      </div>
+  <div class="page-head">
+    <h1>Popular</h1>
+  </div>
 
-      <div class="product-card">
-        <div class="product-image-container">
-          <img src="http://via.placeholder.com/100x100" class="product-image" />
+    {{#each posts}}
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="{{ this.thumbnail.image_url }}" class="product-image" />
+            </div>
+            <div class="product-infos">
+                <h2 class="product-title">{{ this.name }}</h2>
+                <span class="product-description">{{ this.tagline }}</span>
+            </div>
+            <div class="product-link-container">
+                <a href="{{ this.redirect_url }}" class="product-link">Get product</a>
+            </div>
         </div>
-        <div class="product-infos">
-          <h2 class="product-title">Product Title</h2>
-          <span class="product-description">Product Description. This product is awesome.</span>
-        </div>
-        <div class="product-link-container">
-          <a href="#" class="product-link">Get product</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image-container">
-          <img src="http://via.placeholder.com/100x100" class="product-image" />
-        </div>
-        <div class="product-infos">
-          <h2 class="product-title">Product Title</h2>
-          <span class="product-description">Product Description. This product is awesome.</span>
-        </div>
-        <div class="product-link-container">
-          <a href="#" class="product-link">Get product</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image-container">
-          <img src="http://via.placeholder.com/100x100" class="product-image" />
-        </div>
-        <div class="product-infos">
-          <h2 class="product-title">Product Title</h2>
-          <span class="product-description">Product Description. This product is awesome.</span>
-        </div>
-        <div class="product-link-container">
-          <a href="#" class="product-link">Get product</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image-container">
-          <img src="http://via.placeholder.com/100x100" class="product-image" />
-        </div>
-        <div class="product-infos">
-          <h2 class="product-title">Product Title</h2>
-          <span class="product-description">Product Description. This product is awesome.</span>
-        </div>
-        <div class="product-link-container">
-          <a href="#" class="product-link">Get product</a>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <div class="product-image-container">
-          <img src="http://via.placeholder.com/100x100" class="product-image" />
-        </div>
-        <div class="product-infos">
-          <h2 class="product-title">Product Title</h2>
-          <span class="product-description">Product Description. This product is awesome.</span>
-        </div>
-        <div class="product-link-container">
-          <a href="#" class="product-link">Get product</a>
-        </div>
-      </div>
+    {{/each}}
 
     </div>
